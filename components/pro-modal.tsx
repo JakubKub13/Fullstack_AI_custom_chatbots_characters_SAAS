@@ -6,7 +6,7 @@ import { DialogContent, DialogTitle, DialogDescription } from "@/components/ui/d
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 export const ProModal = () => {
@@ -14,6 +14,11 @@ export const ProModal = () => {
     const { toast } = useToast();
 
     const [loading, setLoading] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, [])
 
     const onSubscribe = async () => {
         try {
