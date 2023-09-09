@@ -40,7 +40,7 @@ export class MemoryManager {
         const vectorStore = await PineconeStore.fromExistingIndex(
             new OpenAIEmbeddings({
                 openAIApiKey: process.env.OPENAI_API_KEY }),
-                { pineconeIndex}
+                { pineconeIndex }
         );
 
         const similarDocs = await vectorStore
