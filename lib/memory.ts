@@ -79,7 +79,7 @@ export class MemoryManager {
         return result;  
     }
 
-    public async readLatestHistory(charactersKey: CharactersKey) {
+    public async readLatestHistory(charactersKey: CharactersKey): Promise<string> {
         if (!charactersKey || typeof charactersKey.userId == 'undefined') {
             console.log("Characters key is undefined");
             return "";
